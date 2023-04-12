@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kogito-serverless-operator
+spec:
+  destination:
+    name: ''
+    namespace: kogito-serverless-operator-system
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: cd
+    repoURL: 'https://github.com/desmax74/kogito-serverless-operator-CD'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
