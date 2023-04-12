@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kogito-serverless-operator
+spec:
+  type: ClusterIP
+  selector:
+    app: kogito-serverless-operator
+  ports:
+    - port: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kogito-serverless-operator
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kogito-serverless-operator
+  template:
+    metadata:
+      labels:
+        app: kogito-serverless-operator
+    spec:
+      containers:
+        - name: kogito-serverless-operator
+          image: image-registry.openshift-image-registry.svc:5000/kogito-serverless-operator-pipeline/kogito-serverless-operator
+          ports:
+            - containerPort: 8080
