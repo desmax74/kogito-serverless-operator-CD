@@ -25,6 +25,7 @@ spec:
     spec:
       containers:
         - name: kogito-serverless-operator
-          image: image-registry.openshift-image-registry.svc:5000/kogito-serverless-operator-pipeline/kogito-serverless-operator
+          #image: image-registry.openshift-image-registry.svc:5000/kogito-serverless-operator-pipeline/kogito-serverless-operator
+          image: quay.io/repository/mdessi/kogito-serverless-operator:latest
           ports:
             - containerPort: 8080
