@@ -2994,8 +2994,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: quay.io/mdessi/kogito-serverless-operator:latest
-        #image: image-registry.openshift-image-registry.svc:5000/kogito-serverless-operator-pipeline/kogito-serverless-operator:latest
+        #image: quay.io/mdessi/kogito-serverless-operator:latest
+        image: image-registry.openshift-image-registry.svc:5000/kogito-serverless-operator-pipeline/kogito-serverless-operator:latest
         livenessProbe:
           httpGet:
             path: /healthz
